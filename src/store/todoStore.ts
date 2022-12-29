@@ -15,7 +15,6 @@ export class Store {
       title: task,
       completed: false,
     });
-    console.log(toJS(this.todos));
   }
 
   @action toggleTodoStatus(todoData: Omit<IToDo, "title">) {
