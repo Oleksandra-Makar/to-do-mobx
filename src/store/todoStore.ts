@@ -31,5 +31,4 @@ export class Store {
   }
 }
 
-const todoStore = new Store();
-export default todoStore;
+export default new Store();
