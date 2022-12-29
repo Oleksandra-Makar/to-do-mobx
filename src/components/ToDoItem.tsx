@@ -13,13 +13,15 @@ import store from "../store/todoStore";
 interface IToDoItemProps extends IToDo {}
 
 const ToDoItem: FC<IToDoItemProps> = ({ id, completed, title }) => {
+  const { toggleTodoStatus, deleteTodo } = store;
+
   const handleChangeStatus = useCallback(() => {
-    store.toggleTodoStatus({ completed: !completed, id });
-  }, [completed, id]);
+    toggleTodoStatus({ completed: !completed, id });
+  }, [completed, id, toggleTodoStatus]);
 
   const handleDelete = useCallback(() => {
-    store.deleteTodo(id);
-  }, [id]);
+    deleteTodo(id);
+  }, [id, deleteTodo]);
 
   return (
     <ListItem key={id}>

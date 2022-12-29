@@ -1,23 +1,20 @@
-import { FC, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import store from "../store/todoStore";
 
-interface IAddToDo {
-  addTodo?: (title: string) => void;
-}
-
-const AddToDo: FC<IAddToDo> = () => {
+const AddToDo = () => {
   const [title, setTitle] = useState<string>("");
+  const { addTodo } = store;
 
   const handleSubmit = useCallback(
     (event: any) => {
       event.preventDefault();
       if (title) {
-        store.addTodo(title);
+        addTodo(title);
         setTitle("");
       }
     },
-    [title]
+    [title, addTodo]
   );
   return (
     <form onSubmit={handleSubmit}>

@@ -6,7 +6,7 @@ export class Store {
   @observable todos: IToDo[] = [];
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
   @action addTodo(task: string) {

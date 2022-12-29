@@ -1,13 +1,8 @@
 import { Typography } from "@mui/material";
-import { FC } from "react";
 import todoStore from "../store/todoStore";
 import { observer } from "mobx-react-lite";
 
-interface ICompletedToDosCounterProps {
-  completedTodos?: number;
-}
-
-const CompletedToDosCounter: FC<ICompletedToDosCounterProps> = observer(() => {
+const CompletedToDosCounter = observer(() => {
   const { completedTodoCount } = todoStore;
 
   return (
