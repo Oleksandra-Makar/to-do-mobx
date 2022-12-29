@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable, action, computed, toJS } from "mobx";
+import { makeAutoObservable, observable, action, computed } from "mobx";
 import { IToDo } from "../interfaces/Todo";
 import { v4 as uuidv4 } from "uuid";
 
