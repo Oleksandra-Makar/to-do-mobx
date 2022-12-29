@@ -3,12 +3,15 @@ import ToDoItem from "./ToDoItem";
 import { IToDo } from "../interfaces/Todo";
 import { FC } from "react";
 import { observer } from "mobx-react-lite";
+import store from "../store/todoStore";
 
 interface IToDoList {
-  todos: IToDo[];
+  todos?: IToDo[];
 }
 
-const ToDoList: FC<IToDoList> = observer(({ todos }) => {
+const ToDoList: FC<IToDoList> = observer(() => {
+  const { todos } = store;
+
   return (
     <List>
       {todos.map((todo) => (
