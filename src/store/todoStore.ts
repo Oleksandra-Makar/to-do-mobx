@@ -9,10 +9,10 @@ export class Store {
     makeAutoObservable(this, {}, { autoBind: true });
   }
 
-  @action addTodo(task: string) {
+  @action addTodo(todo: string) {
     this.todos.push({
       id: uuidv4(),
-      title: task,
+      title: todo,
       completed: false,
     });
   }
